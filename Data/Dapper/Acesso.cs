@@ -8,7 +8,7 @@ namespace Data.Dapper
         private IDbConnection _connection;
         public Acesso()
         {
-            _connection = new SqlConnection("Data Source=MARCELODEV;Initial Catalog=TESTE;Integrated Security=True;TrustServerCertificate=True;");
+            _connection = new SqlConnection("StringConexao");
         }
 
         public IDbConnection dbConnectiondbConnection => _connection;
