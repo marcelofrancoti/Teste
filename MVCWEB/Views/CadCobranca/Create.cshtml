@@ -1,0 +1,87 @@
+﻿@model MVCWEB.Models.CobrancaViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .form-horizontal .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-horizontal .control-label {
+        text-align: right;
+    }
+
+    /* Estilo adicional para os botões */
+    .btn-group {
+        margin-top: 10px;
+    }
+</style>
+
+<div style="font-family: sans-serif; color: darkgray;">
+    <ol class="breadcrumb" style="text-transform: uppercase;">
+        <li class="active">Nova Cobrança</li>
+    </ol>
+</div>
+
+<div class="col-md-12">
+    <div class="btn-group">
+        <a class="btn btn-primary" href="@Url.Action("Index", "CadCobranca")">
+            <span title="Detalhes" class="glyphicon glyphicon-menu-left"></span>
+            Voltar
+        </a>
+    </div>
+</div>
+
+@using (Html.BeginForm("Create", "CadCobranca", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-static">
+        <!-- Dados da Cobrança -->
+        <h3>Dados da Cobrança</h3>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataCobranca, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataCobranca, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataCobranca, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClienteId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ClienteId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProdutoId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProdutoId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProdutoId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValorCobranca, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorCobranca, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ValorCobranca, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InformacoesAdicionais, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InformacoesAdicionais, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.InformacoesAdicionais, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Botão de envio do formulário -->
+        <input type="submit" value="Salvar" id="btnSubmit" class="btn btn-primary" />
+    </div>
+}

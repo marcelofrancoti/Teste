@@ -1,0 +1,86 @@
+﻿@model MVCWEB.Models.CadastroProdutoViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Visualizar Produto";
+}
+
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Produtos Cadastrados</a></li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            <a class="btn btn-primary" href="@Url.Action("Index", "CadProduto")">
+                <span class="glyphicon glyphicon-menu-left"></span>
+                Voltar
+            </a>
+        </div>
+    </div>
+
+    <br />
+
+    <fieldset>
+        <legend>Dados do Produto</legend>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProdutoId, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(model => model.ProdutoId, new { @class = "form-control", @readonly = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @readonly = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrecoBase, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(model => model.PrecoBase, new { @class = "form-control", @readonly = "true" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descricao, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(model => model.Descricao, new { @class = "form-control", @readonly = "true" })
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <a class="btn btn-primary" href="@Url.Action("Edit", "CadProduto", new { id = Model.ProdutoId })">
+                <span class="glyphicon glyphicon-upload"></span>
+                Alterar
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        padding-top: 20px;
+    }
+
+    fieldset {
+        border: 1px solid #ddd;
+        margin: 0;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+
+    legend {
+        font-size: 18px;
+        font-weight: bold;
+        border: 0px;
+        border-radius: 4px;
+        padding: 5px 10px;
+        background-color: #f5f5f5;
+    }
+</style>

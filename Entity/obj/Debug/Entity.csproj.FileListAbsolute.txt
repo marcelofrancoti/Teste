@@ -1,0 +1,12 @@
+C:\Users\redbu\OneDrive\Área de Trabalho\TesteGTI\Aplication-Multi-Plataforma\Entity\bin\Debug\Entity.dll
+C:\Users\redbu\OneDrive\Área de Trabalho\TesteGTI\Aplication-Multi-Plataforma\Entity\bin\Debug\Entity.pdb
+C:\Users\redbu\OneDrive\Área de Trabalho\TesteGTI\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\redbu\OneDrive\Área de Trabalho\TesteGTI\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\redbu\OneDrive\Área de Trabalho\TesteGTI\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.dll
+C:\Users\redbu\OneDrive\Área de Trabalho\TesteGTI\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.pdb
+C:\Users\redbu\OneDrive\Área de Trabalho\Aplication-Multi-Plataforma\Entity\bin\Debug\Entity.dll
+C:\Users\redbu\OneDrive\Área de Trabalho\Aplication-Multi-Plataforma\Entity\bin\Debug\Entity.pdb
+C:\Users\redbu\OneDrive\Área de Trabalho\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\redbu\OneDrive\Área de Trabalho\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\redbu\OneDrive\Área de Trabalho\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.dll
+C:\Users\redbu\OneDrive\Área de Trabalho\Aplication-Multi-Plataforma\Entity\obj\Debug\Entity.pdb

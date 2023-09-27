@@ -1,0 +1,175 @@
+﻿@model MVCWEB.Models.CadastroClienteViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Visualizar";
+}
+
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Clientes Cadastrados</a></li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            <a class="btn btn-primary" href="@Url.Action("Index", "CadCliente")">
+                <span class="glyphicon glyphicon-menu-left"></span>
+                Voltar
+            </a>
+        </div>
+    </div>
+
+    <br />
+
+    @using (Html.BeginForm("Edit", "CadCliente", new { id = Model.ClienteId }, FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <legend>Dados do Cliente</legend>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteId, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.ClienteId, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CPF, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Data_de_Nascimento, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.Data_de_Nascimento, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Data_Expedicao, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.Data_Expedicao, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Estado_Civil, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.Estado_Civil, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.UF, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.UF, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sexo, new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(model => model.Sexo, new { @class = "form-control", @readonly = "true" })
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Dados do Endereço -->
+        <h3></h3>
+        <fieldset>
+            <legend>Dados do Endereço</legend>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.CEP, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.CEP, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.CEP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.Logradouro, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.Logradouro, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.Logradouro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.Numero, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.Numero, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.Complemento, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.Complemento, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.Complemento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.Bairro, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.Bairro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.Cidade, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.Cidade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClienteEndereco.UF, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClienteEndereco.UF, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.ClienteEndereco.UF, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <a class="btn btn-primary" href="@Url.Action("Edit", "CadCliente", new { id = Model.ClienteId })">
+                    <span class="glyphicon glyphicon-upload"></span>
+                    Alterar
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    body {
+        padding-top: 20px;
+    }
+
+    fieldset {
+        border: 1px solid #ddd;
+        margin: 0;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+
+    legend {
+        font-size: 18px;
+        font-weight: bold;
+        border: 0px;
+        border-radius: 4px;
+        padding: 5px 10px;
+        background-color: #f5f5f5;
+    }
+</style>

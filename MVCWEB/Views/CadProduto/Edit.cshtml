@@ -1,0 +1,65 @@
+﻿@model MVCWEB.Models.CadastroProdutoViewModel
+
+@{
+    ViewBag.Title = "Editar Produto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Título centralizado e mais espaçoso -->
+<h2 class="text-center" style="margin-bottom: 30px;">Editar Produto</h2>
+
+@using (Html.BeginForm("Edit", "CadProduto", FormMethod.Post, new { role = "form", data_toggle = "validator" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <h4 class="text-center" style="margin-bottom: 20px;">Detalhes do Produto</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ProdutoId) <!-- Certifique-se de usar o nome correto do campo de identificação do Produto -->
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", required = "required", data_toggle = "tooltip", title = "Nome é obrigatório!" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrecoBase, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PrecoBase, new { htmlAttributes = new { @class = "form-control", required = "required", data_toggle = "tooltip", title = "Preço é obrigatório!" } })
+                @Html.ValidationMessageFor(model => model.PrecoBase, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", required = "required", data_toggle = "tooltip", title = "Descrição é obrigatória!" } })
+                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Botão de envio do formulário -->
+        <div class="form-group" style="margin-top: 20px;">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div style="margin-top: 20px;">
+    @Html.ActionLink("Voltar à lista", "Index", null, new { @class = "btn btn-secondary" })
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+}
