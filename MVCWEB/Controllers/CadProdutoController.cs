@@ -96,12 +96,17 @@ public class CadProdutoController : Controller
     // GET: CadProduto/Delete/5
     public ActionResult Delete(int id)
     {
-        CadastroProdutoViewModel produto = _consumoAPIProduto.GetPorId(id);
-        if (produto == null)
+        try
         {
-            return HttpNotFound();
+            _consumoAPIProduto.Excluir(id);
+            return RedirectToAction("Index");
         }
-        return View(produto);
+        catch (Exception ex)
+        {
+            ModelState.AddModelError(string.Empty, "Erro ao excluir o produto: " + ex.Message);
+        }
+
+        return View();
     }
 
     // POST: CadProduto/Delete/5

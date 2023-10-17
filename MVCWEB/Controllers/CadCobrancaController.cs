@@ -130,6 +130,8 @@ namespace MVCWEB.Controllers
 
         public ActionResult Delete(int id)
         {
+            _consumoAPICobranca.Excluir(id);
+
             return RedirectToAction("Index");
         }
     }
